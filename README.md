@@ -27,26 +27,26 @@ Things you may want to cover:
 Sistema de TV por assinatura
 
 1.⁠ ⁠Cadastrar clientes
-  - Nome (completo)
-  - Idade (completo)
+  - Nome (back-end completo)
+  - Idade (back-end completo)
 
   Validações:
-    - Nome e idade obrigatório (completo)
-    - Permitido apenas pessoas maiores de idade (completo)
+    - Nome e idade obrigatório (back-end completo)
+    - Permitido apenas pessoas maiores de idade (back-end completo)
 
 2.⁠ ⁠Cadastrar planos
-  - Nome (completo)
-  - Valor(completo)
+  - Nome (back-end completo)
+  - Valor(back-end completo)
 
   Validações:
-    - Nome e valor obrigatórios  (completo)
+    - Nome e valor obrigatórios  (back-end completo)
 
 3.⁠ ⁠Cadastrar serviços adicionais
-  - Nome
-  - Valor
+  - Nome (back-end completo)
+  - Valor (back-end completo)
 
   Validações:
-    - Nome e valor obrigatórios
+    - Nome e valor obrigatórios (back-end completo)
 
 4.⁠ ⁠Cadastrar pacotes
   - Nome
