@@ -6,12 +6,15 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+  - 8.0.1
 
 * System dependencies
 
 * Configuration
 
 * Database creation
+  -postgreeSQL
+  rails db:migrate
 
 * Database initialization
 
