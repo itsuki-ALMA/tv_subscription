@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_11_151911) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_11_202656) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -19,6 +19,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_11_151911) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "extra_services", force: :cascade do |t|
+    t.bigint "signature_id", null: false
+    t.bigint "additional_service_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["additional_service_id"], name: "index_extra_services_on_additional_service_id"
+    t.index ["signature_id"], name: "index_extra_services_on_signature_id"
   end
 
   create_table "pack_services", force: :cascade do |t|
@@ -38,6 +47,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_11_151911) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "signatures", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "pack_id", null: false
+    t.bigint "subscription_plan_id", null: false
+    t.decimal "totalValue"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pack_id"], name: "index_signatures_on_pack_id"
+    t.index ["subscription_plan_id"], name: "index_signatures_on_subscription_plan_id"
+    t.index ["user_id"], name: "index_signatures_on_user_id"
+  end
+
   create_table "subscription_plans", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
@@ -53,6 +74,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_11_151911) do
     t.integer "age"
   end
 
+  add_foreign_key "extra_services", "additional_services"
+  add_foreign_key "extra_services", "signatures"
   add_foreign_key "pack_services", "additional_services"
   add_foreign_key "pack_services", "packs"
+  add_foreign_key "signatures", "packs"
+  add_foreign_key "signatures", "subscription_plans"
+  add_foreign_key "signatures", "users"
 end

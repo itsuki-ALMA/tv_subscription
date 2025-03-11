@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  signature: one
+  additional_service: one
+
+two:
+  signature: two
+  additional_service: two
