@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  pack: one
+  subscription_plan: one
+  totalValue: 9.99
+
+two:
+  user: two
+  pack: two
+  subscription_plan: two
+  totalValue: 9.99
